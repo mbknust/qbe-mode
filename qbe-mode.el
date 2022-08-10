@@ -43,7 +43,9 @@
                     ("\\(@[[:alnum:]]+\\|-?[[:digit:]]+\\)"
                      . 'font-lock-constant-face))))
 
-    (setq font-lock-defaults `(,regexps))))
+    (setq-local font-lock-defaults `(,regexps))
+    (setq-local comment-start "# ")
+    (setq-local comment-end "")))
 
 (provide 'qbe-mode)
 ;;; qbe-mode.el ends here
