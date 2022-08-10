@@ -1,5 +1,6 @@
 ;; TODO add header
 
+;;;###autoload
 (define-derived-mode qbe-mode fundamental-mode "QBE"
   "major mode for editing QBE IR"
   (let* ((opcodes '("add" "sub" "div" "mul"
@@ -42,10 +43,12 @@
                      . 'font-lock-keyword-face)
                     ("\\(@[[:alnum:]]+\\|-?[[:digit:]]+\\)"
                      . 'font-lock-constant-face))))
-
     (setq-local font-lock-defaults `(,regexps))
     (setq-local comment-start "# ")
     (setq-local comment-end "")))
+
+;;;###autoload
+(add-to-list 'auto-mode-alist '("\\.ssa" . qbe-mode))
 
 (provide 'qbe-mode)
 ;;; qbe-mode.el ends here
