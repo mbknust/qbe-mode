@@ -1,0 +1,4 @@
+* qbe-mode
+This major mode provides rudimentary support for editing files containing QBE compiler IR within Emacs.
+A description of the Intermediate Language syntax can be found [[https://c9x.me/compile/doc/il.html][here]].
+Currently, only regex-based syntax highlighting is implemented.
