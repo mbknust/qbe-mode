@@ -1,4 +1,4 @@
-;;; qbe-mode.el --- Major mode for editing QBE IR  -*- lexical-binding: t; -*-
+;;; qbe-mode.el --- Major mode for editing QBE IL  -*- lexical-binding: t; -*-
 ;;
 ;; Copyright (C) 2022
 ;;
@@ -25,13 +25,13 @@
 ;;
 ;;; Commentary:
 ;;
-;; A major mode for the QBE IR (see https://c9x.me/compile/).
+;; A major mode for the QBE IL (see https://c9x.me/compile/).
 ;;
 ;;; Code:
 
 (defvar qbe-mode-keywords
   '("export" "section" "type" "align" "function" "data")
-  "List of QBE IR keywords")
+  "List of QBE IL keywords")
 
 (defvar qbe-mode-opcodes
   '("add" "sub" "div" "mul"
@@ -60,7 +60,7 @@
     "truncd" "cast" "copy" "phi"
     "vastart" "vaarg"
     "call" "jmp" "jnz" "ret")
-  "List of QBE IR instructions")
+  "List of QBE IL instructions")
 
 (defvar qbe-mode-font-lock-defaults
   `((("[sd]_-?[[:digit:]]+\\(\\.[[:digit:]]+\\)?"
@@ -79,7 +79,7 @@
 
 ;;;###autoload
 (define-derived-mode qbe-mode fundamental-mode "QBE"
-  "major mode for editing QBE IR"
+  "major mode for editing QBE IL"
   (setq-local font-lock-defaults qbe-mode-font-lock-defaults)
   (setq-local comment-start "# ")
   (setq-local comment-end ""))
