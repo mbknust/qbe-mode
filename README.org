@@ -2,3 +2,15 @@
 This major mode provides rudimentary support for editing files containing QBE compiler IL within Emacs.
 A description of the Intermediate Language syntax can be found [[https://c9x.me/compile/doc/il.html][here]].
 Currently, only regex-based syntax highlighting is implemented.
+** Install
+*** Doom Emacs
+Add the following to your ~packages.el~ file:
+#+BEGIN_EXAMPLE
+(package! qbe-mode :recipe (:type git :host github :repo "mbknust/qbe-mode"))
+#+END_EXAMPLE
+*** Manual
+Download ~qbe-mode.el~ and place it somewhere (preferably ~$HOME/.emacs.d/lisp/~), then:
+#+BEGIN_EXAMPLE
+(add-to-list 'load-path "PATH_TO_QBE_MODE/")
+(require 'qbe-mode)
+#+END_EXAMPLE
